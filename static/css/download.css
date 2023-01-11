@@ -1,0 +1,281 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #1a52eec2;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.squares-common,
+.bars-common,
+.bar-one {
+    margin: 0;
+}
+
+.download_panel {
+    width: 1000px;
+    height: 800px;
+    /* background-color: #000000; */
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+body::-webkit-scrollbar,
+.download_panel::-webkit-scrollbar {
+    display: none;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    border-bottom: 2px #7a23d8 solid;
+}
+
+.icon .container {
+    top: 8px;
+}
+
+.d_title {
+    position: absolute;
+    left: 25%;
+    top: 10px;
+    color: #1a52eec2;
+
+}
+
+.d_text {
+    width: calc(43px*0);
+    overflow: hidden;
+    font-size: 72px;
+    animation: typewriter 24s steps(11) infinite;
+    /* animation-delay: 3s; */
+}
+
+.black_bar {
+    position: absolute;
+    top: 0;
+    width: 5px;
+    height: 82px;
+    background-color: #7a23d8;
+    border-radius: 30px;
+    animation: flash 1s ease-out infinite, typewriter2 24s steps(11) infinite;
+    /* animation-delay: 3s; */
+}
+
+@keyframes flash {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes typewriter {
+    0% {
+        width: 0;
+    }
+
+    30% {
+        width: calc(43px*11);
+    }
+
+    100% {
+        width: calc(43px*11);
+    }
+}
+
+@keyframes typewriter2 {
+    0% {
+        left: 0;
+    }
+
+    30% {
+        left: calc(43px*11);
+    }
+
+    100% {
+        left: calc(43px*11);
+    }
+}
+
+
+.dl_task {
+    width: 980px;
+    height: 678px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    /* background-color: #000; */
+    overflow: hidden;
+    padding: 10px 10px 10px 10px;
+}
+
+.dl_task::-webkit-scrollbar,
+.task_panel::-webkit-scrollbar,
+div::-webkit-scrollbar {
+    display: none;
+}
+
+
+.process_bar {
+    position: absolute;
+    width: 150px;
+    height: 10px;
+    background-color: #fff;
+    /* border-style: outset; */
+    border-radius: 10px;
+    right: 200px;
+    top: 25px;
+}
+
+.bar_slider {
+    position: absolute;
+    height: 10px;
+    background-color: rgb(170, 12, 243);
+    border-radius: 10px;
+    left: 0;
+    top: 0;
+}
+
+input {
+    display: none;
+}
+
+input#ok_list+label,
+input#task_list+label {
+    font-size: 24px;
+    padding-right: 30px;
+    padding-left: 20px;
+}
+
+input[type="radio"]:checked+label {
+    border-bottom: #7a23d8 2px solid;
+    color: #7a23d8;
+}
+
+input#task_list:checked~div.task_list {
+    display: block;
+    width: 960px;
+    height: 620px;
+    background-color: ghostwhite;
+    padding: 10px;
+}
+
+input#ok_list:checked~div.ok_list {
+    display: block;
+    width: 960px;
+    height: 620px;
+    background-color: ghostwhite;
+    padding: 10px;
+}
+
+.task_list,
+.ok_list {
+    display: none;
+}
+
+label#block {
+    padding-left: 400px;
+}
+
+.func_label {
+    margin-left: 8px;
+}
+
+.func_label:hover,
+input+label:hover {
+    color: #7a23d8;
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: boxicons;
+    font-weight: 400;
+    font-style: normal;
+    src: url(../fonts/boxicons.eot);
+    src: url(../fonts/boxicons.eot) format('embedded-opentype'), url(../fonts/boxicons.woff2) format('woff2'), url(../fonts/boxicons.woff) format('woff'), url(../fonts/boxicons.ttf) format('truetype'), url(../fonts/boxicons.svg?#boxicons) format('svg')
+}
+
+img {
+    width: 32px;
+}
+
+table {
+    width: 100%;
+    /* border-collapse:collapse; */
+    table-layout: fixed;
+}
+
+thead {
+    background-color: #fff;
+    width: 100%;
+}
+
+th {
+    background-color: #fff;
+    height: 24px;
+}
+
+table#t-content, table#t-content2{
+    border-collapse:collapse;
+}
+
+div#table2, div#table2-2{
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+th:first-child{
+    width: 5%;
+}
+
+th#th1 , td.td-1{
+    width: 400px;
+    text-align: left;
+    padding-left: 20px;
+}
+
+th#th2 , td.td-2{
+    width: 8%;
+}
+
+th#th3 , td.td-3{
+    width: 30%;
+}
+
+th:last-child , td.td-4{
+    width: 20%;
+}
+
+tr{
+    background-color: #fff;
+    border-bottom: 2px solid ghostwhite;
+}
+td{
+    /* padding: 10px; */
+    text-align: center;
+    font-size: 24px;
+   
+    height: 60px;
+}
+
+td.td-1{
+    padding-left: 23px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+td.td-0, td.oktd-0{
+    width: 5%;
+    padding-right: 2px;
+}
+
+.span-1, .span-2{
+    display: inline-block;
+    width: 40%;
+}
+
+.td-4 img:hover, .td-2 img:hover{
+    cursor: pointer;
+}
+

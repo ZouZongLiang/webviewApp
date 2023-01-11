@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" style="width: 1200px; height: 900px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="refresh" content="10"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet" href="../css/loading.css">
+    <link rel="stylesheet" href="../css/detail.css">
+    <script src="../js/my.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="header">
+        <div class="icon">
+            <div class="container">
+                <div class="one common"></div>
+                <div class="two common"></div>
+                <div class="three common"></div>
+                <div class="four common"></div>
+                <div class="five common"></div>
+                <div class="six common"></div>
+                <div class="seven common"></div>
+                <div class="eight common"></div>
+            </div>
+        </div>
+        <div class="v_api">
+            <ul>
+                <li>资源地址 &dtrif;
+                    <ul>
+                        <li onclick="set_api()"> 天空资源</li>
+                        <li onclick="set_api()"> 鱼乐资源</li>
+                        <li onclick="set_api()"> 新浪资源</li>
+                        <li onclick="set_api()"> 卧龙资源</li>
+                        <li onclick="set_api()"> 南国影院</li>
+                        <li onclick="set_api()"> 考拉TV</li>
+                        <li onclick="set_api()"> 光速资源</li>
+                        <li onclick="set_api()"> 红牛资源</li>
+                        <li onclick="set_api()"> U酷资源</li>
+                        <li onclick="set_api()"> 快播资源</li>
+                        <li onclick="set_api()"> 百度云</li>
+                        <li onclick="set_api()"> 樱花资源</li>
+                        <li onclick="set_api()"> 39影视</li>
+                        <li onclick="set_api()"> 一拳动漫</li>
+                    </ul>
+                </li>
+            </ul>
+            <i class="v_api_text">天空资源</i>
+        </div>
+
+        <div class="v_class">
+            <ul>
+                <li>视频分类 &dtrif;
+                    <ul>
+                        <li onclick="set_class()"> 日本动漫</li>
+                        <li onclick="set_class()"> 电影</li>
+                        <li onclick="set_class()"> 纪录片</li>
+                        <li onclick="set_class()"> 连续剧</li>
+                        <li onclick="set_class()"> 欧美剧</li>
+                        <li onclick="set_class()"> 香港剧</li>
+                        <li onclick="set_class()"> 动作片</li>
+                        <li onclick="set_class()"> 爱情片</li>
+                        <li onclick="set_class()"> 科幻片</li>
+                        <li onclick="set_class()"> 恐怖片</li>
+                        <li onclick="set_class()"> 剧情片</li>
+                        <li onclick="set_class()"> 战争片</li>
+                        <li onclick="set_class()"> 喜剧片</li>
+                        <li onclick="set_class()"> 动画片</li>
+                        <li onclick="set_class()"> 犯罪片</li>
+                        <li onclick="set_class()"> 国产剧</li>
+                        <li onclick="set_class()"> 韩国剧</li>
+                        <li onclick="set_class()"> 动漫</li>
+                        <li onclick="set_class()"> 综艺</li>
+                        <li onclick="set_class()"> 大陆综艺</li>
+                        <li onclick="set_class()"> 港台综艺</li>
+                        <li onclick="set_class()"> 日韩综艺</li>
+                        <li onclick="set_class()"> 欧美综艺</li>
+                        <li onclick="set_class()"> 台湾剧</li>
+                        <li onclick="set_class()"> 国产动漫</li>
+                        <li onclick="set_class()"> 欧美动漫</li>
+                        <li onclick="set_class()"> 海外动漫</li>
+                        <li onclick="set_class()"> 泰国剧</li>
+                        <li onclick="set_class()"> 日剧</li>
+                        <li onclick="set_class()"> 电影解说</li>
+                        <li onclick="set_class()"> 奇幻片</li>
+                        <li onclick="set_class()"> 灾难片</li>
+                        <li onclick="set_class()"> 悬疑片</li>
+                        <li onclick="set_class()"> 其他片</li>
+                    </ul>
+                </li>
+            </ul>
+            <i class="v_class_text">默认分类</i>
+        </div>
+
+        <div class="inputbox">
+            <input type="search" id="search">
+            <button class="button1" onclick="search(0)">搜本站</button>
+            <button class="button2" onclick="search(1)">搜全站</button>
+        </div>
+        <!--history icon -->
+        <div class="his" onclick="show_his()"></div>
+        <svg onclick="open_dl_panel()" t="1671846005666" class="dl_icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5288" width="32" height="32"><path d="M96 896h832c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32H96c-17.673 0-32-14.327-32-32 0-17.673 14.327-32 32-32z m448.906-132.192l276.45-276.45c12.497-12.496 32.758-12.496 45.255 0 12.497 12.497 12.497 32.759 0 45.255L535.597 863.627c-12.497 12.497-32.758 12.497-45.255 0L148.546 524.483c-12.497-12.496-12.497-32.758 0-45.254 12.496-12.497 32.758-12.497 45.254 0l287.106 284.453 0.032-667.427c0-17.673 14.327-32 32-32 17.673 0 32 14.327 32 32l-0.032 667.553z" p-id="5289" fill="#000"></path></svg>
+    </div>
+
+    <!-- video list -->
+    <div class="plane">
+        <div class="loading">
+            <div class="bars-common bar-one"></div>
+            <div class="bars-common bar-two"></div>
+            <div class="bars-common bar-three"></div>
+
+            <div class="squares-common square-one"></div>
+            <div class="squares-common square-two"></div>
+        </div>
+    </div>
+
+
+    <!-- 换页 -->
+    <div class="pg_charge">
+        <span class="pg_go" id="now_pg">第1页</span>
+        <span class="pg_btn" onclick="go_pg('f_pg')">首页</span>
+        <span class="pg_btn" onclick="go_pg('p_pg')">上一页</span>
+        <span class="pg_btn" onclick="go_pg('n_pg')">下一页</span>
+        <span class="pg_btn" onclick="go_pg('l_pg')">尾页</span>
+        <span class="pg_go">前往第</span>
+        <input type="text" class="pg_input" id="my_pg">
+        <span class="pg_go">页</span>
+        <span class="pg_btn" onclick="go_pg(document.getElementById('my_pg').value)">GO!</span>
+        <span class="pg_go" id="total_pg">共10页</span>
+    </div>
+
+    <!-- history panel -->
+    <div class="his_panel" style="visibility: hidden;">
+        <div class="main_his_card">
+            <div class="his_title">
+                <span>历史记录</span>
+                <a onclick="clear_his()" class="clear_his">清除</a>
+                <a onclick="close_his()" class="x_icon">x</a>
+            </div>
+            <div class="his_cards">
+
+            </div>
+        </div>
+        <div class="other_area" onclick="close_his()"></div>
+    </div>
+
+    <!-- video detail panel -->
+    <div class="detail_panel" style="display: none;" id="dp" onclick="close_detail_by_mask()">
+        
+        <!-- js function will add something in this element after being called and let this element show  -->
+        
+    </div>
+
+
+</body>
+
+
+</html>

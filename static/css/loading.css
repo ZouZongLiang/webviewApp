@@ -1,0 +1,192 @@
+/* 
+.loading{
+    background: rgba(0, 0, 0, 0.048);
+    width: 100%;
+    height: 100%;
+} */
+/* Compressing bars style */
+
+.bars-common {
+    height: 100px;
+    max-height: 100%;
+    width: 25px;
+    margin: auto;
+    position: absolute;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 60px;
+}
+
+.bar-one {
+    left: 0;
+    right: 100px;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.815), 0 0 1vw 0 rgba(0, 153, 255, 0.815), inset 0 0 0 2px rgba(0, 153, 255, 0.815);
+}
+
+.bar-two {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.815), 0 0 1vw 0 rgba(0, 153, 255, 0.815), inset 0 0 0 2px rgba(0, 153, 255, 0.815);
+}
+
+.bar-three {
+    left: 100px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.815), 0 0 1vw 0 rgba(0, 153, 255, 0.815), inset 0 0 0 2px rgba(0, 153, 255, 0.815);
+}
+
+/* Rotating squares style */
+
+.squares-common {
+    height: 200px;
+    max-height: 100%;
+    width: 200px;
+    margin: auto;
+    position: absolute;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 0%;
+    border-radius: 50px;
+}
+
+.square-one {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.815), 0 0 1vw 0 rgba(0, 153, 255, 0.815), inset 0 0 0 2px rgba(0, 153, 255, 0.815);
+}
+
+.square-two {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.815), 0 0 1vw 0 rgba(0, 153, 255, 0.815), inset 0 0 0 2px rgba(0, 153, 255, 0.815);
+}
+
+/* Animation */
+/* Compressing bars animation */
+
+.bar-one {
+    animation: barOne 1s .33s ease infinite;
+    -moz-animation: barOne 1s .33s ease infinite;
+    /* Firefox */
+    -webkit-animation: barOne 1s .33s ease infinite;
+    /* Safari and Chrome */
+    -o-animation: barOne 1s .33s ease infinite;
+    /* Opera */
+}
+
+@keyframes barOne {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.815), 0 0 1vw 0 rgba(0, 153, 255, 0.815), inset 0 0 0 2px rgba(0, 153, 255, 0.815);
+    }
+
+    50% {
+        height: 2.5vw;
+        box-shadow: 0 0 0 2px magenta, 0 0 1vw 0 magenta, inset 0 0 0 2px magenta;
+    }
+}
+
+.bar-two {
+    animation: barTwo 1s .66s ease infinite;
+    -moz-animation: barTwo 1s .66s ease infinite;
+    /* Firefox */
+    -webkit-animation: barTwo 1s .66s ease infinite;
+    /* Safari and Chrome */
+    -o-animation: barTwo 1s .66s ease infinite;
+    /* Opera */
+}
+
+@keyframes barTwo {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.815), 0 0 1vw 0 rgba(0, 153, 255, 0.815), inset 0 0 0 2px rgba(0, 153, 255, 0.815);
+    }
+
+    50% {
+        height: 2.5vw;
+        box-shadow: 0 0 0 2px magenta, 0 0 1vw 0 magenta, inset 0 0 0 2px magenta;
+    }
+}
+
+.bar-three {
+    animation: barThree 1s .99s ease infinite;
+    -moz-animation: barThree 1s .99s ease infinite;
+    /* Firefox */
+    -webkit-animation: barThree 1s .99s ease infinite;
+    /* Safari and Chrome */
+    -o-animation: barThree 1s .99s ease infinite;
+    /* Opera */
+}
+
+@keyframes barThree {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.815), 0 0 1vw 0 rgba(0, 153, 255, 0.815), inset 0 0 0 2px rgba(0, 153, 255, 0.815);
+    }
+
+    50% {
+        height: 2.5vw;
+        box-shadow: 0 0 0 2px magenta, 0 0 1vw 0 magenta, inset 0 0 0 2px magenta;
+    }
+}
+
+/* Rotating squares animation */
+
+.square-one {
+    animation: squareOne 4s 0.01s ease infinite;
+    -moz-animation: squareOne 4s 0.01s ease infinite;
+    /* Firefox */
+    -webkit-animation: squareOne 4s 0.01s ease infinite;
+    /* Safari and Chrome */
+    -o-animation: squareOne 4s 0.01s ease infinite;
+    /* Opera */
+}
+
+@keyframes squareOne {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.square-two {
+    animation: squareTwo 4s 0.01s ease infinite;
+    -moz-animation: squareTwo 4s 0.01s ease infinite;
+    /* Firefox */
+    -webkit-animation: squareTwo 4s 0.01s ease infinite;
+    /* Safari and Chrome */
+    -o-animation: squareTwo 4s 0.01s ease infinite;
+    /* Opera */
+}
+
+@keyframes squareTwo {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

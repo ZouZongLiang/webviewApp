@@ -1,0 +1,196 @@
+.detail_panel{
+    position: fixed;
+    width: 1200px;
+    height: 900px;
+    top: 0;
+    left: 0;
+    background-color: rgba(167, 163, 163, 0.616);
+}
+.bg {
+    width: 800px;
+    height: 600px;
+    background-color: #fff;
+    position: absolute;
+    top: 150px;
+    left: 200px;
+}
+
+img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 160px;
+    height: 256px;
+}
+
+.title{
+    font-size: 24px;
+    color: rgb(241, 141, 9);
+    position: absolute;
+    top: 40px;
+    left: 240px;
+}
+
+.actor{
+    position: absolute;
+    top: 100px;
+    left: 240px;
+    font-size: large;
+}
+
+.actors{
+    position: absolute;
+    top: 100px;
+    left: 295px;
+    font-size: large;
+    width: 400px;
+    /* background-color: #000; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.intro{
+    position: absolute;
+    top: 140px;
+    left: 240px;
+    font-size: large;
+}
+
+.intro_text{
+    width: 400px;
+    height: 100px;
+    background-color: rgba(245, 245, 245, 0);
+    position: absolute;
+    top: 123px;
+    left: 295px;
+    font-size: large;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+.episode_panel{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+}
+
+
+
+.episode_panel input{
+    display: none;
+}
+
+.episode_panel label{
+    display: inline-block;
+    height: 9%;
+    width: 8%;
+    text-align: center;
+}
+
+input:checked + label{
+    background-color: #fff;
+    color: rgb(31, 62, 238);
+    border: rgb(105, 158, 236) 2px solid;
+    border-bottom: #fff 1px solid;
+}
+.episode_panel input#l1:checked ~ div#l1-1{
+    display: block;
+    background-color: #fff;
+   
+}
+.episode_panel input#l2:checked ~ div#l2-1{
+    display: block;
+    background-color: #fff;
+   
+}
+.episode_panel input#l3:checked ~ div#l3-1{
+    display: block;
+    background-color: #fff;
+   
+}
+.episode_panel input#l4:checked ~ div#l4-1{
+    display: block;
+    background-color: #fff;
+   
+}
+.episode_panel input#l5:checked ~ div#l5-1{
+    display: block;
+    background-color: #fff;
+   
+}
+.episode_panel input#l6:checked ~ div#l6-1{
+    display: block;
+    background-color: #fff; 
+}
+
+.tab_content{
+    position: absolute;
+    display: none;
+    width: 776px;
+    height: 248px;
+    bottom: 0;
+    padding: 10px;
+    z-index: -1;
+    border: rgb(105, 158, 236) 2px solid;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.tab_content::-webkit-scrollbar-x{
+    display: none;
+}
+
+.episode_div{
+    display: inline-block;
+    width: max-content;
+    text-align: center;
+    height: 12%;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 6px;
+    margin-top: 5px;
+    border: #1e8ee9 1px solid;
+    /* overflow: scroll; */
+    white-space: nowrap;
+}
+
+.episode_div::-webkit-scrollbar{
+    display: none;
+}
+
+.episode_div:hover{
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+.d_icon{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 50px;
+    top: 5px;
+    animation: d_scale 1s linear infinite;
+}
+
+.d_icon:hover{
+    cursor: pointer;
+    animation-play-state: paused;
+    scale: 1.2;
+}
+
+@keyframes d_scale {
+    0%{
+        scale: 1.2;
+    }
+    50%{
+        scale: 1;
+    }
+    100%{
+        scale: 1.2;
+    }
+}
+

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Download</title>
+    <link rel="stylesheet" href="../css/download.css">
+    <link rel="stylesheet" href="../css/icon.css">
+    <link rel="stylesheet" href="../css/loading.css">
+    <script src="../js/downdload.js"></script>
+</head>
+
+<body>
+    <div class="download_panel">
+        <div class="header">
+            <div class="icon">
+                <div class="container">
+                    <div class="one common"></div>
+                    <div class="two common"></div>
+                    <div class="three common"></div>
+                    <div class="four common"></div>
+                    <div class="five common"></div>
+                    <div class="six common"></div>
+                    <div class="seven common"></div>
+                    <div class="eight common"></div>
+                </div>
+            </div>
+            <div class="d_title">
+                <div class="d_text">Downloading</div>
+                <div class="black_bar"></div>
+            </div>
+        </div>
+        <div class="dl_task">
+            <!-- <div class="loading"><div class="bars-common bar-one"></div><div class="bars-common bar-two"></div><div class="bars-common bar-three"></div><div class="squares-common square-one"></div><div class="squares-common square-two"></div></div> -->
+            <input type="radio" name="task_state" id="task_list" checked>
+            <label for="task_list">下载列表</label>
+            <input type="radio" name="task_state" id="ok_list">
+            <label for="ok_list">已完成</label>
+            <label id="block"></label>
+            <label class="func_label" onclick="dl_start()">全部开始</label>
+            <label class="func_label" onclick="dl_pause()">全部暂停</label>
+            <label class="func_label" onclick="dl_dir()">打开下载目录</label>
+            <div class="task_list">
+                <table>
+                    <thead>
+                        <th>序号</th>
+                        <th id="th1">任务</th>
+                        <th id="th2">状态</th>
+                        <th id="th3">完整度&nbsp&nbsp&nbsp&nbsp&nbsp下载进度</th>
+                        <th>操作</th>
+                    </thead>
+                </table>
+                <div id="table2">
+                    <table id="t-content">
+                        <tr id="tr-1">
+                            <td class="td-0">1</td>
+                            <td class="td-1">666666666666666</td>
+                            <td class="td-2">
+                                <img src="..\\img\\start.svg">
+                            </td>
+                            <td class="td-3">
+                                <span class="span-1">100.0%</span>
+                                <span class="span-2">100.0%</span>
+                            </td>
+                            <td class="td-4">
+                                <img src="..\\img\\ashbin.svg" onclick="delete_tr('')">
+                                <img src="..\\img\\file.svg" onclick="explore_tr('')">
+                            </td>
+                        </tr>
+
+
+                        <tr id="tr-2">
+                            <td class="td-0">2</td>
+                            <td class="td-1">666666666666666</td>
+                            <td class="td-2">
+                                <img src="..\\img\\start.svg">
+                            </td>
+                            <td class="td-3">
+                                <span class="span-1">100.0%</span>
+                                <span class="span-2">100.0%</span>
+                            </td>
+                            <td class="td-4">
+                                <img src="..\\img\\ashbin.svg" onclick="delete_tr('')">
+                                <img src="..\\img\\file.svg" onclick="explore_tr('')">
+                            </td>
+                        </tr>
+
+                        <tr id="tr-3">
+                            <td class="td-0">3</td>
+                            <td class="td-1">666666666666666</td>
+                            <td class="td-2">
+                                <img src="..\\img\\start.svg">
+                            </td>
+                            <td class="td-3">
+                                <span class="span-1">100.0%</span>
+                                <span class="span-2">100.0%</span>
+                            </td>
+                            <td class="td-4">
+                                <img src="..\\img\\ashbin.svg" onclick="delete_tr('')">
+                                <img src="..\\img\\file.svg" onclick="explore_tr('')">
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="ok_list">
+                <table>
+                    <thead>
+                        <th>序号</th>
+                        <th id="th1">任务</th>
+                        <th id="th2">状态</th>
+                        <th id="th3">完整度&nbsp&nbsp&nbsp&nbsp&nbsp下载进度</th>
+                        <th>操作</th>
+                    </thead>
+                </table>
+                <div id="table2-2">
+                    <table id="t-content2">
+                        <tr id="ok-1">
+                            <td class="oktd-0">1</td>
+                            <td class="td-1">666666666666666</td>
+                            <td class="td-2">
+                                <img src="..\\img\\ok.svg">
+                            </td>
+                            <td class="td-3">
+                                <span class="span-1">100.0%</span>
+                                <span class="span-2">100%</span>
+                            </td>
+                            <td class="td-4">
+                                <img src="..\\img\\ashbin.svg" onclick="delete_tr('ok')">
+                                <img src="..\\img\\file.svg" onclick="explore_tr('ok')">
+                            </td>
+                        </tr>
+
+
+                        <tr id="ok-2">
+                            <td class="oktd-0">2</td>
+                            <td class="td-1">666666666666666</td>
+                            <td class="td-2">
+                                <img src="..\\img\\ok.svg">
+                            </td>
+                            <td class="td-3">
+                                <span class="span-1">100.0%</span>
+                                <span class="span-2">100.0%</span>
+                            </td>
+                            <td class="td-4">
+                                <img src="..\\img\\ashbin.svg" onclick="delete_tr('ok')">
+                                <img src="..\\img\\file.svg" onclick="explore_tr('ok')">
+                            </td>
+                        </tr>
+
+                        <tr id="ok-3">
+                            <td class="oktd-0">3</td>
+                            <td class="td-1">666666666666666</td>
+                            <td class="td-2">
+                                <img src="..\\img\\ok.svg">
+                            </td>
+                            <td class="td-3">
+                                <span class="span-1">100.0%</span>
+                                <span class="span-2">100.0%</span>
+                            </td>
+                            <td class="td-4">
+                                <img src="..\\img\\ashbin.svg" onclick="delete_tr('ok')">
+                                <img src="..\\img\\file.svg" onclick="explore_tr('ok')">
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

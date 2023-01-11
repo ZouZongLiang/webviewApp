@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <script src="../js/hls.min.js"></script>
+    <script src="../js/DPlayer.min.js"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .dplayer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .dplayer-select_episode-icon {
+            color: aliceblue;
+            font-size: small;
+            vertical-align: middle;
+        }
+
+        .right-controller {
+            width: 200px;
+            height: 32px;
+            background-color: rgb(0, 0, 0);
+            position: relative;
+            bottom: -60px;
+
+        }
+
+        /* .dplayer-icons-right{
+            overflow: visible;
+
+        } */
+
+        .icon-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(224, 222, 222, 0.76);
+            margin: 10px;
+            /* background-color: rgb(33, 166, 219); */
+            position: relative;
+            bottom: -10px;
+        }
+
+        .icon-text:hover {
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .episode_panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(255, 254, 254, 0);
+            /* display: none; */
+        }
+
+
+        .episode_panel_cards {
+            position: absolute;
+            bottom: 44px;
+            right: 10px;
+            width: 60%;
+            height: 40%;
+            background-color: #171b1f;
+            padding: 10px;
+            overflow: scroll;
+        }
+
+        .episode_panel_cards::-webkit-scrollbar {
+            display: none;
+        }
+
+        .episode_card {
+            height: 20px;
+            text-align: center;
+            padding: 5px 10px 5px 10px;
+            background-color: #fff;
+            display: inline-block;
+            margin: 5px 3px 5px 3px;
+        }
+
+        .episode_card:hover {
+            color: rgb(13, 128, 236);
+            background-color: rgba(255, 255, 255, 0.295);
+        }
+
+        .speed-panel {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(248, 12, 12, 0);
+        }
+
+        .speed_divs {
+            position: absolute;
+            bottom: 44px;
+            right: 64px;
+            background-color: #171b1f;
+            color: #fff;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .speed_div {
+            padding: 5px 10px 5px 10px;
+        }
+
+        .speed_div:hover {
+            background-color: rgba(255, 255, 255, 0.281);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dplayer" class="dplayer">
+    </div>
+    
+</body>
+<script>
+    var episodes
+    window.addEventListener('pywebviewready', function () {
+        pywebview.api.get_episodes().then(res => {
+            episodes = res
+            dp.switchVideo({ url: episodes['now_url'] })
+            dp.play()
+            init_episode_panel(episodes['data'])
+        })
+
+        console.log('pywebview is ready now!');
+    })
+    
+    function keyDown(event) {
+        pywebview.api.full_screen(event.keyCode)
+    }
+    document.onkeydown = keyDown
+
+
+    const dp = new DPlayer({
+        container: document.getElementById('dplayer'),
+        autoplay: true,
+        video:{
+            type: 'auto',
+        },
+    });
+    var right_icon_panel = document.getElementsByClassName('dplayer-icons dplayer-icons-right')[0];
+    right_icon_panel.innerHTML = '<span class="icon-text icon-episode"onclick="show_episode()">选集</span><span class="icon-text icon-speed"onclick="show_speed_panel()">1.0x</span><span class="icon-text"onclick="fullScreen()">全屏</span><div class="episode_panel"style="display:none;"onclick="hide_episode()"><div class="episode_panel_cards"></div></div><div class="speed-panel"onclick="hide_speed_panel()"style="display: none;"><div class="speed_divs"><div class="speed_div"onclick="select_speed(0.5)">0.5x</div><div class="speed_div"onclick="select_speed(1)">1.0x</div><div class="speed_div"onclick="select_speed(1.25)">1.25x</div><div class="speed_div"onclick="select_speed(1.5)">1.5x</div><div class="speed_div"onclick="select_speed(2)">2.0x</div></div></div>'
+
+    // 隐藏右键菜单
+    document.getElementsByClassName('dplayer-menu')[0].style.display='none'
+
+    function fullScreen() {
+        pywebview.api.full_screen(122).then(res => {
+            dp.fullScreen.request()
+        })
+    }
+
+    function show_episode() {
+        var episode_panel = document.getElementsByClassName('episode_panel')[0];
+        episode_panel.style.display = 'block';
+    }
+
+    function hide_episode() {
+        var episode_panel = document.getElementsByClassName('episode_panel')[0];
+        episode_panel.style.display = 'none';
+    }
+
+    function select_episode(pid) {
+        hide_episode();
+        dp.switchVideo({ url: episodes['episodes'][pid][1]})
+        dp.play()
+        pywebview.api.select_episode(pid)
+    }
+
+    function show_speed_panel() {
+        var speed_panel = document.getElementsByClassName('speed-panel')[0]
+        speed_panel.style.display = 'block'
+    }
+
+    function hide_speed_panel() {
+        var speed_panel = document.getElementsByClassName('speed-panel')[0]
+        speed_panel.style.display = 'none'
+    }
+
+    function select_speed(_speed) {
+        dp.speed(_speed);
+        var speed_icon = document.getElementsByClassName('icon-speed')[0];
+        speed_icon.innerHTML = _speed + 'x'
+    }
+
+    function init_episode_panel(data) {
+        var ep = document.getElementsByClassName('episode_panel_cards')[0];
+        ep.innerHTML = data
+    }
+</script>
+
+</html>
